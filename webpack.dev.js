@@ -2,6 +2,7 @@
 
 const path = require('path')
 const webpack = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -13,10 +14,8 @@ module.exports = {
     filename: '[name].js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
-    // new HtmlWebpackPlugin({
-    //   template: './src/index.html'
-    // })
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin()
   ],
   devServer: {
     contentBase: './dist',
