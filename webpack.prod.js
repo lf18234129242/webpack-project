@@ -46,6 +46,13 @@ module.exports = {
                 })
               ]
             }
+          },
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 75, // rem相对px转换的单位
+              remPrecision: 8 // 保留小数位数
+            }
           }
         ]
       },
