@@ -9,8 +9,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    search: './src/search.js'
+    index: './src/index/index.js',
+    search: './src/search/index.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -89,7 +89,7 @@ module.exports = {
       cssProcessor: require('cssnano')
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src/search.html'), // 文件目录
+      template: path.join(__dirname, 'src/search/index.html'), // 文件目录
       filename: 'search.html', // 打包出来的html文件名称
       chunks: ['search'], // 指定生成的html使用哪些chunk
       inject: true, // true，打包出来的chunk：js、css会自动注入到这个chunk里面
@@ -103,7 +103,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src/index.html'),
+      template: path.join(__dirname, 'src/index/index.html'),
       filename: 'index.html',
       chunks: ['index'],
       inject: true,
