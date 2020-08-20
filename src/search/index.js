@@ -4,11 +4,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './search.less'
 import logo from './images/logo.png'
+import { a, b } from './tree-shaking'
 
+if(false) {
+  b()
+}
 class Search extends React.Component {
   render () {
+    const funcA = a()
     return <div className="search-text">
-      Search Text hot 
+      { funcA }Search Text hot 
       <img src = { logo } />
     </div>
   }
