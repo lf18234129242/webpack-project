@@ -17,7 +17,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name]_[chunkhash:8].js'
   },
-  mode: 'production',
+  mode: 'none',
   module: {
     rules: [
       {
@@ -118,6 +118,7 @@ module.exports = {
       }
     }),
     new CleanWebpackPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin()
     // new HtmlWebpackExternalsPlugin({
     //   externals: [
     //     {
